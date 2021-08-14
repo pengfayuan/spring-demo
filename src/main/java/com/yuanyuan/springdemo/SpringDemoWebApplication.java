@@ -1,7 +1,9 @@
 package com.yuanyuan.springdemo;
 
+import java.util.Arrays;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 
 /**
  * @author FAYUAN.PENG
@@ -11,6 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SpringDemoWebApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SpringDemoWebApplication.class);
+        ConfigurableApplicationContext context = SpringApplication.run(SpringDemoWebApplication.class);
+        Arrays.stream(context.getBeanDefinitionNames()).forEach(bean -> System.out.println("load bean:" + bean));
     }
 }
