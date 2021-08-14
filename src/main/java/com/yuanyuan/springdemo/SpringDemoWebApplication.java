@@ -13,6 +13,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 public class SpringDemoWebApplication {
 
     public static void main(String[] args) {
+
         ConfigurableApplicationContext context = SpringApplication.run(SpringDemoWebApplication.class);
         Arrays.stream(context.getBeanDefinitionNames()).forEach(bean -> System.out.println("load bean:" + bean));
     }
